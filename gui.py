@@ -32,7 +32,7 @@ class ResultGUI:
                 x, y = j * pixel_size, i * pixel_size
                 self.canvas.create_rectangle(x, y, x + pixel_size, y + pixel_size, fill="#" + hex(int(255 * (1 - pixel)))[2:] * 3, width=0)
         self.label["text"] = f"Label: {self.set[self.i][1].argmax()}"
-        self.output["text"] = f"Output: {self.network.feed_forward(self.set[self.i][0].argmax())}"
+        self.output["text"] = f"Output: {self.network.feed_forward(self.set[self.i][0]).argmax()}"
         self.canvas.pack()
         self.label.pack()
         self.output.pack()
